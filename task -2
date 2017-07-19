@@ -1,0 +1,61 @@
+from selenium import webdriver
+​
+In [6]:
+
+browser = webdriver.Chrome()
+browser = webdriver.Chrome()
+
+WebDriverExceptionTraceback (most recent call last)
+<ipython-input-6-0fc3a8848702> in <module>()
+----> 1 browser = webdriver.Chrome()
+
+C:\ProgramData\Anaconda2\lib\site-packages\selenium\webdriver\chrome\webdriver.pyc in __init__(self, executable_path, port, chrome_options, service_args, desired_capabilities, service_log_path)
+     60             service_args=service_args,
+     61             log_path=service_log_path)
+---> 62         self.service.start()
+     63 
+     64         try:
+
+C:\ProgramData\Anaconda2\lib\site-packages\selenium\webdriver\common\service.pyc in start(self)
+     79                 raise WebDriverException(
+     80                     "'%s' executable needs to be in PATH. %s" % (
+---> 81                         os.path.basename(self.path), self.start_error_message)
+     82                 )
+     83             elif err.errno == errno.EACCES:
+
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+
+
+In [7]:
+
+url = 'https://www.buy.am/en/partners'
+In [8]:
+
+browser.get(url)
+
+NameErrorTraceback (most recent call last)
+<ipython-input-8-e6d999ba7f90> in <module>()
+----> 1 browser.get(url)
+
+NameError: name 'browser' is not defined
+
+In [9]:
+
+import scrapy
+​
+​
+In [10]:
+
+class PartnerSpider(scrapy.Spider):
+    name = "partner"
+    allowed_domains = ["buy.am"]
+In [11]:
+
+start_urls = 'https://www.buy.am/en/partners'
+In [12]:
+
+browser.execute_script("window.scrollTo(0, document.body.scrollHeight);"
+  File "<ipython-input-12-41ead7c35a89>", line 1
+    browser.execute_script("window.scrollTo(0, document.body.scrollHeight);"
+                                                                            ^
+SyntaxError: unexpected EOF while parsing
